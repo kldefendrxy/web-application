@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Load</title>
+</head>
+<body>
+    <h1>Hospital Patients and Stays</h1>
+    <h2>Patients</h2>
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.last_name }} {{ patient.first_name }} - {{ patient.insurance_policy_number }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Stays</h2>
+    <ul>
+        {% for stay in stays %}
+            <li>{{ stay.patient }}: {{ stay.diagnosis }} ({{ stay.admission_date }} - {{ stay.discharge_date }}) in {{ stay.ward }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Wards</h2>
+    <ul>
+        {% for ward in wards %}
+            <li>{{ ward }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
